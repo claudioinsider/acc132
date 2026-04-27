@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comercial Matão — Montes Claros MG</title>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,700;1,400&family=Cabin:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--wood:#8b5e3c;--bark:#3d2b1f;--pine:#5a8a3c;--cream:#f7f2eb;--tan:#d4a96a;--dark:#1e130c;--light:#faf6f0;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--light);color:var(--dark);font-family:'Cabin',sans-serif;}
+
+nav{position:fixed;top:0;width:100%;z-index:100;background:var(--bark);display:flex;justify-content:space-between;align-items:center;padding:1rem 3rem;}
+.nav-logo{font-family:'Literata',serif;font-size:1.3rem;color:var(--tan);font-style:italic;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.82rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover{color:var(--tan);}
+
+.hero{min-height:100vh;padding-top:72px;background:var(--bark);display:grid;grid-template-columns:1fr 1fr;overflow:hidden;}
+.hero-left{padding:5rem 3rem;display:flex;flex-direction:column;justify-content:center;position:relative;}
+.hero-left::after{content:'';position:absolute;right:0;top:0;bottom:0;width:1px;background:rgba(212,169,106,0.2);}
+.badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(212,169,106,0.15);border:1px solid rgba(212,169,106,0.3);color:var(--tan);padding:0.4rem 1rem;border-radius:3px;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:2rem;width:fit-content;}
+.hero-left h1{font-family:'Literata',serif;font-size:clamp(3rem,5vw,4.8rem);line-height:1.1;color:var(--cream);margin-bottom:1.5rem;}
+.hero-left h1 em{color:var(--tan);font-style:italic;}
+.hero-left p{font-size:0.95rem;color:rgba(247,242,235,0.55);line-height:1.9;max-width:400px;margin-bottom:2.5rem;}
+.btn-tan{background:var(--tan);color:var(--bark);padding:0.9rem 2.2rem;text-decoration:none;font-weight:700;font-size:0.88rem;letter-spacing:0.06em;text-transform:uppercase;display:inline-block;transition:all 0.2s;margin-right:1rem;}
+.btn-tan:hover{background:var(--cream);}
+.btn-outline{border:1px solid rgba(212,169,106,0.4);color:var(--tan);padding:0.9rem 2.2rem;text-decoration:none;font-size:0.88rem;letter-spacing:0.06em;text-transform:uppercase;display:inline-block;transition:all 0.2s;}
+.btn-outline:hover{border-color:var(--tan);background:rgba(212,169,106,0.08);}
+
+.hero-right{background:var(--wood);display:flex;flex-direction:column;justify-content:center;padding:3rem;gap:1.5rem;background-image:repeating-linear-gradient(0deg,rgba(0,0,0,0.04) 0,rgba(0,0,0,0.04) 1px,transparent 1px,transparent 20px);}
+.stat-card{background:rgba(0,0,0,0.2);border:1px solid rgba(212,169,106,0.2);padding:1.5rem 2rem;}
+.stat-card .n{font-family:'Literata',serif;font-size:2.8rem;color:var(--cream);font-weight:700;}
+.stat-card .l{font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--tan);margin-top:0.2rem;}
+.ativo{background:var(--pine);color:white;display:inline-block;padding:0.3rem 0.8rem;font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;}
+
+.strip{background:var(--tan);padding:0.7rem 3rem;display:flex;gap:2rem;overflow-x:auto;}
+.strip-i{font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--bark);white-space:nowrap;}
+
+.services{padding:5rem 3rem;background:var(--cream);}
+.sp{font-size:0.7rem;letter-spacing:0.2em;color:var(--wood);text-transform:uppercase;font-weight:700;margin-bottom:0.6rem;}
+.sh{font-family:'Literata',serif;font-size:2.5rem;color:var(--bark);margin-bottom:3rem;}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.sc{background:white;padding:2rem;border-bottom:3px solid var(--cream);transition:border-color 0.3s;box-shadow:0 2px 8px rgba(0,0,0,0.04);}
+.sc:hover{border-bottom-color:var(--wood);}
+.sc .ei{font-size:2rem;margin-bottom:1rem;}
+.sc h3{font-family:'Literata',serif;font-size:1.2rem;color:var(--bark);margin-bottom:0.5rem;}
+.sc p{font-size:0.85rem;color:#7a6a5a;line-height:1.7;}
+
+.about{padding:5rem 3rem;background:var(--light);display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.at h2{font-family:'Literata',serif;font-size:2.2rem;color:var(--bark);margin-bottom:1.5rem;}
+.at p{font-size:0.92rem;color:#6a5a4a;line-height:1.9;margin-bottom:1rem;}
+.dt{width:100%;border-collapse:collapse;}
+.dt tr{border-bottom:1px solid rgba(139,94,60,0.1);}
+.dt td{padding:0.85rem 0.5rem;font-size:0.88rem;}
+.dt td:first-child{color:#9a8a7a;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:700;width:38%;}
+.dt td:last-child{color:var(--bark);font-weight:500;}
+.ab{background:var(--pine);color:white;padding:0.15rem 0.6rem;font-size:0.7rem;font-weight:700;}
+
+.contact{background:var(--bark);padding:4rem 3rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
+.ct h2{font-family:'Literata',serif;font-size:2.3rem;color:var(--cream);margin-bottom:0.8rem;}
+.ct p{color:rgba(247,242,235,0.5);font-size:0.92rem;line-height:1.7;}
+.ci-list{display:flex;flex-direction:column;gap:1rem;}
+.ci{display:flex;gap:1rem;align-items:flex-start;padding:1.2rem;background:rgba(212,169,106,0.08);border-left:3px solid var(--tan);}
+.ci .icon{font-size:1.2rem;}
+.ci .lbl{font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--tan);margin-bottom:0.2rem;}
+.ci .val{font-size:0.9rem;color:var(--cream);}
+
+footer{background:#100a06;padding:1.5rem 3rem;display:flex;justify-content:space-between;}
+footer p{font-size:0.76rem;color:#5a4a3a;}
+
+@media(max-width:900px){.hero,.about,.contact{grid-template-columns:1fr;}.sg{grid-template-columns:1fr;}.hero-right{min-height:280px;}.hero-left,.services,.about,.contact{padding:3rem 1.5rem;}nav{padding:1rem 1.5rem;}.nav-links{display:none;}footer{flex-direction:column;gap:0.5rem;padding:1rem 1.5rem;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">Comercial Matão</div>
+  <ul class="nav-links">
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<section id="inicio" class="hero">
+  <div class="hero-left">
+    <div class="badge">🌲 Sto. Expedito · Montes Claros / MG</div>
+    <h1>Madeira,<br>Ferragens e<br><em>Tradição</em></h1>
+    <p>Comércio varejista e atacadista de madeira, artefatos, ferragens, ferramentas e transporte de cargas. Mais de 40 anos servindo Montes Claros e região.</p>
+    <div>
+      <a href="#contato" class="btn-tan">Solicitar Orçamento</a>
+      <a href="#servicos" class="btn-outline">Nossos Serviços</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stat-card"><div class="n">1985</div><div class="l">Fundação</div></div>
+    <div class="stat-card"><div class="n">+40</div><div class="l">Anos de tradição</div></div>
+    <div class="stat-card"><div class="n">MG</div><div class="l">Minas Gerais</div></div>
+    <div><span class="ativo">✓ CNPJ Ativo</span></div>
+  </div>
+</section>
+
+<div class="strip">
+  <span class="strip-i">Madeira Varejo</span>
+  <span class="strip-i">·</span>
+  <span class="strip-i">Madeira Atacado</span>
+  <span class="strip-i">·</span>
+  <span class="strip-i">Ferragens</span>
+  <span class="strip-i">·</span>
+  <span class="strip-i">Ferramentas</span>
+  <span class="strip-i">·</span>
+  <span class="strip-i">Transporte de Cargas</span>
+  <span class="strip-i">·</span>
+  <span class="strip-i">CNPJ Ativo</span>
+</div>
+
+<section id="servicos" class="services">
+  <div class="sp">O que oferecemos</div>
+  <div class="sh">Produtos e Serviços</div>
+  <div class="sg">
+    <div class="sc"><div class="ei">🪵</div><h3>Madeira Varejo</h3><p>Venda no varejo de madeiras, tábuas, ripas e artefatos para marcenaria, construção e decoração.</p></div>
+    <div class="sc"><div class="ei">📦</div><h3>Madeira Atacado</h3><p>Fornecimento atacadista de madeira e produtos derivados para revendedores, marcenarias e construtoras.</p></div>
+    <div class="sc"><div class="ei">🔧</div><h3>Ferragens e Ferramentas</h3><p>Amplo estoque de ferragens, ferramentas e fixadores no varejo e atacado para obras e manutenção.</p></div>
+    <div class="sc"><div class="ei">🚛</div><h3>Transporte de Cargas</h3><p>Transporte rodoviário de cargas intermunicipal, interestadual e internacional com frota própria.</p></div>
+    <div class="sc"><div class="ei">📐</div><h3>Artefatos de Madeira</h3><p>Peças e artefatos de madeira para os mais variados usos na construção civil e marcenaria.</p></div>
+    <div class="sc"><div class="ei">🤝</div><h3>Parcerias Comerciais</h3><p>Parcerias com construtoras, arquitetos e empresas para fornecimento contínuo de materiais.</p></div>
+  </div>
+</section>
+
+<section id="sobre" class="about">
+  <div class="at">
+    <h2>Sobre a Comercial Matão</h2>
+    <p>Fundada em novembro de 1985, a Comercial Matão Ltda é uma das empresas mais tradicionais do setor madeireiro e de ferragens em Montes Claros, Minas Gerais.</p>
+    <p>Com décadas de experiência, consolidamos nossa posição como fornecedora confiável de madeiras, ferragens, ferramentas e serviços de transporte de cargas para clientes em todo o norte de Minas e demais estados.</p>
+    <p>Nossa tradição de quatro décadas é a garantia de qualidade e comprometimento que cada cliente merece.</p>
+  </div>
+  <table class="dt">
+    <tr><td>Razão Social</td><td>COMERCIAL MATAO LTDA</td></tr>
+    <tr><td>CNPJ</td><td>21.583.240/0001-36</td></tr>
+    <tr><td>Fundação</td><td>13/11/1985</td></tr>
+    <tr><td>Situação</td><td><span class="ab">ATIVA</span></td></tr>
+    <tr><td>Endereço</td><td>Av. Cula Mangabeira, 1059</td></tr>
+    <tr><td>Bairro</td><td>Sto. Expedito</td></tr>
+    <tr><td>Cidade</td><td>Montes Claros — MG</td></tr>
+    <tr><td>CEP</td><td>39.401-002</td></tr>
+  </table>
+</section>
+
+<section id="contato" class="contact">
+  <div class="ct">
+    <h2>Entre em Contato</h2>
+    <p>Visite nossa loja em Montes Claros ou entre em contato para solicitar orçamento de madeiras, ferragens ou transporte.</p>
+  </div>
+  <div class="ci-list">
+    <div class="ci"><span class="icon">📍</span><div><div class="lbl">Endereço</div><div class="val">Av. Cula Mangabeira, 1059 — Sto. Expedito, Montes Claros/MG</div></div></div>
+    <div class="ci"><span class="icon">📮</span><div><div class="lbl">CEP</div><div class="val">39.401-002</div></div></div>
+    <div class="ci"><span class="icon">🆔</span><div><div class="lbl">CNPJ</div><div class="val">21.583.240/0001-36</div></div></div>
+  </div>
+</section>
+
+<footer>
+  <p>CNPJ: 21.583.240/0001-36 · COMERCIAL MATAO LTDA</p>
+  <p>© 2026 — Todos os direitos reservados</p>
+</footer>
+</body>
+</html>
